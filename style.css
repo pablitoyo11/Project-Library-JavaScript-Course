@@ -1,0 +1,85 @@
+
+:root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-switchButton: #fdffff;
+    --color-black: #000;
+}
+ul,li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/*
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}*/
+
+
+.addBookForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+}
+
+.switchButtonCheckbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: none;
+}
+.switchButtonLabel {
+    background-color: var(--color-red);
+    width: 4em;
+    height: 1em;
+    border-radius: 1em;
+    display: inline-block;
+    position: relative;
+}
+.switchButtonLabel:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 2em;
+    height: 1em;
+    background-color: var(--color-switchButton);
+    content: '';
+    border-radius: 1em;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+
+.switchButtonCheckbox:checked + .switchButtonLabel {
+    background-color: var(--color-green);
+}
+.switchButtonCheckbox:checked + .switchButtonLabel:before {
+    transform: translateX(2em);
+}
+
+.switchContainer{
+    display: flex;
+    gap: 0.5em;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+}
+.switchContainer>p{
+    font-size: 1em;
+}
+.addBookBtn{
+}
+.addBookForm>ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.addBookForm>ul>li{
+    align-self: center;
+    text-align: center;
+}

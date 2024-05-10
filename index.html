@@ -9,5 +9,47 @@
 </head>
 <body>
     
+<div class="formFlex">
+    <!--onsubmit="proto function()" -->
+    <form  class="addBookForm" action="" method="post">
+        <ul>
+            <li>
+                <label for="Author"><span>Author</span></label>
+                <br>
+                <input type="text" id="Author" name="Author" placeholder="George Orwell" required></input>
+            </li>
+            <li>
+                <label for="Title"><span>Title</span></label>
+                <br>
+                <input type="text" id="Title" name="Title" placeholder="Animal Farm" required></input>
+            </li>
+            <li>
+                <label for="Author"><span>Pages</span></label>
+                <br>
+                <input type="text" id="Pages" name="Pages" placeholder="112" required></input>
+            </li>
+            <li>
+                <label for="Author"><span>Publishing Year</span></label>
+                <br>
+                <input type="text" id="Publishing Year" name="Publishing Year" placeholder="1945" required></input>
+            </li>
+            <li>
+                <div class="switchContainer">
+                    <p>No</p>
+                    <div class="switchButton">
+                        <!-- Checkbox -->
+                        <input type="checkbox" name="switchButton" id="Read" class="switchButtonCheckbox">
+                        <!-- Botón -->
+                        <label for="Read" class="switchButtonLabel"></label>
+                    </div>
+                    <p>Yes</p>
+                </div>
+            </li>
+            <li>
+                <button type="submit" class="addBookBtn" form="addBookForm">Add Book</button>
+            </li>
+        </ul>
+    </form>
+</div>        
 </body>
 </html>
