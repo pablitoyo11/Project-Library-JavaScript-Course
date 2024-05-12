@@ -1,7 +1,7 @@
 const myLibrary = [];
 
 
-function Book() {  // the constructor...
+function Book(author,title,pages,publishingYear) {  // the constructor...
     this.author = author;
     this.title = title;
     this.pages = pages;
@@ -16,10 +16,11 @@ Book.prototype.haveRead = function() {
     else{
         console.log(`You have not read ${this.title} by ${this.author}`);
     }
-  };
+}
 
 
 function addBookToLibrary() {  // do stuff here
-
+//on book form submit add new book
+    myLibrary.push(new Book(author,title,pages,publishingYear));
 }
 
