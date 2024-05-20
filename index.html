@@ -8,48 +8,79 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
+    <div id="bookTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                    <th>Publishing Year</th>
+                    <th>Did you read?</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
     
-<div class="formFlex">
-    <!--onsubmit="proto function()" -->
-    <form  class="addBookForm" action="" method="post">
-        <ul>
-            <li>
-                <label for="Author"><span>Author</span></label>
-                <br>
-                <input type="text" id="Author" name="Author" placeholder="George Orwell" required></input>
-            </li>
-            <li>
-                <label for="Title"><span>Title</span></label>
-                <br>
-                <input type="text" id="Title" name="Title" placeholder="Animal Farm" required></input>
-            </li>
-            <li>
-                <label for="Author"><span>Pages</span></label>
-                <br>
-                <input type="text" id="Pages" name="Pages" placeholder="112" required></input>
-            </li>
-            <li>
-                <label for="Author"><span>Publishing Year</span></label>
-                <br>
-                <input type="text" id="Publishing Year" name="Publishing Year" placeholder="1945" required></input>
-            </li>
-            <li>
-                <div class="switchContainer">
-                    <p>No</p>
-                    <div class="switchButton">
-                        <!-- Checkbox -->
-                        <input type="checkbox" name="switchButton" id="Read" class="switchButtonCheckbox">
-                        <!-- Botón -->
-                        <label for="Read" class="switchButtonLabel"></label>
-                    </div>
-                    <p>Yes</p>
-                </div>
-            </li>
-            <li>
-                <button type="submit" class="addBookBtn" form="addBookForm">Add Book</button>
-            </li>
-        </ul>
-    </form>
-</div>        
+<div class="addBookPopupBoxBtn">
+    <a class="addBookPopupBtn" href="#bookPopup">Add a new book</a>
+</div>
+
+<div id="bookPopup" class="overlay">
+    <div class="addBookPopupBox">
+        <h2>Please compleate the info</h2>
+
+            <div class="formFlex">
+                <!--onsubmit="proto function()" -->
+                <form  id="addBookForm" class="addBookForm" action="" method="post" onsubmit="return (addBookToLibrary(event));" >
+                    <ul>
+                        <li>
+                            <label for="Author"><span>Author</span></label>
+                            <br>
+                            <input type="text" id="Author" name="Author" placeholder="George Orwell" required></input>
+                        </li>
+                        <li>
+                            <label for="Title"><span>Title</span></label>
+                            <br>
+                            <input type="text" id="Title" name="Title" placeholder="Animal Farm" required></input>
+                        </li>
+                        <li>
+                            <label for="Pages"><span>Pages</span></label>
+                            <br>
+                            <input type="number" id="Pages" name="Pages" placeholder="112" required></input>
+                        </li>
+                        <li>
+                            <label for="Publishing Year"><span>Publishing Year</span></label>
+                            <br>
+                            <input type="number" id="Publishing Year" name="Publishing Year" placeholder="1945" required></input>
+                        </li>
+                        <li>
+                            <div class="switchContainer">
+                                <p>No</p>
+                                <div class="switchButton">
+                                    <!-- Checkbox -->
+                                    <input type="checkbox" name="switchButton" id="Read" class="switchButtonCheckbox">
+                                    <!-- Botón -->
+                                    <label for="Read" class="switchButtonLabel"></label>
+                                </div>
+                                <p>Yes</p>
+                            </div>
+                        </li>
+                        <li>
+                            <button form="addBookForm" type="submit" class="addBookBtn" >Add Book</button>
+                        </li>
+                    </ul>
+                </form> 
+            </div>    
+
+        <a class="bookPopupClose" href="#">&times;</a>
+    </div>
+</div>
+    
 </body>
 </html>
