@@ -86,7 +86,6 @@ flex:1;
     text-align: center;
 }
 
-
 .addBookPopupBoxBtn {
     width: 40%;
     margin: 0 auto;
@@ -134,4 +133,46 @@ flex:1;
     font-weight: bold;
     text-decoration: none;
     color: #333;
+}
+
+th:nth-child(6), td:nth-child(6) {
+    background-color: rgb(196, 81, 81);
+}
+
+tr:has(.haveReadBtn[data-read="true"]) {
+    background-color: rgb(140, 240, 140);
+}
+
+tr:has(.haveReadBtn[data-read="false"]) {
+    background-color: rgb(240, 140, 140);
+}
+
+tr:hover {background-color: #57afaf !important;}
+
+#bookTable>table>thead>tr{
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 4fr 4fr 1fr 3fr 2fr 4fr;
+}
+
+#bookTable>table>tbody>tr{
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 4fr 4fr 1fr 3fr 2fr 4fr;
+}
+#bookTable>table>tbody>tr{
+    justify-items: center;
+}
+#bookTable>table>tbody>tr>td:nth-child(6){
+    grid-column: 6;
+}
+
+#bookTable>table>thead>tr>th, #bookTable>table>tbody>tr>td{
+min-width: 0;
+min-height: 0;
+width: 100%;
+height: 100%;
+}
+table>*{    
+    text-align: center;
 }

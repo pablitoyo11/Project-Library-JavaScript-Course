@@ -83,6 +83,7 @@ function addBookToTable(author, title, pages, publishingYear, haveRead,bookIndex
         myLibrary[bookIndex].haveRead();
         updateLibraryToTable();
     });
+    protoHaveReadCellBtn.setAttribute("data-read", myLibrary[bookIndex].read);
     haveReadCell.appendChild(protoHaveReadCellBtn);
     row.appendChild(haveReadCell);
 
