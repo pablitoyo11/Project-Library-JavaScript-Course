@@ -15,6 +15,24 @@ const myLibrary = [
     }
 ];
 
+
+class Book {
+    constructor(author,title,pages,publishingYear,read){
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.publishingYear = publishingYear;
+        this.read = read;
+    }
+
+    haveRead(){
+        this.read = !this.read;
+    }
+}
+
+
+
+/*
 function Book(author,title,pages,publishingYear,read) {  // the constructor...
     this.author = author;
     this.title = title;
@@ -26,6 +44,7 @@ function Book(author,title,pages,publishingYear,read) {  // the constructor...
 Book.prototype.haveRead = function() {
     this.read = !this.read;
 }
+*/
 
 function addBookToLibrary(e) {  // do stuff here
 // on book form submit add new book
