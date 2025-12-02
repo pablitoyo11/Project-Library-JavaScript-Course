@@ -133,17 +133,20 @@ function updateLibraryToTable(){
     loadLibraryToTable();
 };
 
-//Custom validity message Get the Author input element
-const authorInput = document.getElementById('Author');
-const customErrorMessage = 'The author name must be filled!';
-
-// Listen for the 'invalid' event (fires when the required field is submitted empty)
-authorInput.addEventListener('invalid', function(event) {
-// Set the exact custom error message if the field is empty (valueMissing)
-    if (authorInput.validity.valueMissing) {
-        authorInput.setCustomValidity(customErrorMessage);
-    }
+function setCustomErrorMsg(){
+    const authorInput = document.getElementById('Author');
+    const customErrorMessage = 'The author name must be filled!';
+    // Listener for the 'invalid' event (fires when the required field is submitted empty)
+    authorInput.addEventListener('invalid', function() {
+            authorInput.setCustomValidity(customErrorMessage);
+        }
+    authorInput.addEventListener('input', function() {
+        this.setCustomValidity('');
 });
 
+//Window.onload = loadLibraryToTable();
+window.onload = function() {
+    loadLibraryToTable();
+    setCustomErrorMsg();
+};
 
-Window.onload = loadLibraryToTable();
